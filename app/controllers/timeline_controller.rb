@@ -14,4 +14,26 @@ class TimelineController < ApplicationController
         redirect_to :root
     end
     
+    def destroy
+        pp = Blog.find(params[:id])
+        
+        if pp.user_id = current_user.id
+        pp.destroy
+        redirect_to :root
+        else
+        redirect_to :root
+        end
+        
+    end
+    
+    def commentdestroy
+        pp = Comment.find(params[:id])
+        if pp.user_id = current_user.id
+        pp.destroy
+        redirect_to :root
+        else
+        redirect_to :root
+        end
+    end
+    
 end

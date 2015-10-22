@@ -14,7 +14,7 @@
         
         <p class="bg-info"><%=b.user.email%> : </p>
     <div class="well">
-        <%=b.content%>
+        <%=b.content%> <a href="/timeline/destroy?id=<%=b.id%>"> 삭제 </a> 
     </div>
         
         
@@ -29,7 +29,7 @@
         <% end %>
         <ol>
         <% b.comments.each do |c| %>
-            <li><%= c.user.email%> : <%=c.msg%></li>
+            <li><%= c.user.email%> : <%=c.msg%></li> <%=b.content%> <a href="/timeline/commentdestroy?id=<%=c.id%>">삭제 </a>
         <% end %>    
         </ol>
     </li>
